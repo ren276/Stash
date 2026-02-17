@@ -2,8 +2,8 @@
 
 **Stash**  is your personal digital workspace designed to streamline your job application process. It serves as a central hub to manage your reusable links, text snippets, and resume versions, allowing you to access and copy them instantly.
 
-![Stash Banner](/public/banner-placeholder.png) 
-*(Note: Replace with actual screenshot or banner)*
+![Stash Banner](/public/logo.png) 
+
 
 ## 🚀 Features
 
