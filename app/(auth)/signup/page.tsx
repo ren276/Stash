@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -54,12 +56,15 @@ export default function SignupPage() {
             <div className="w-full max-w-md animate-fade-in">
                 <div className="text-center mb-8">
                     <Link href="/" className="inline-flex items-center gap-2 mb-6">
-                        <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                            <Briefcase className="w-5 h-5 text-accent" />
+                        <div className="relative w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden">
+                            <Image
+                                src="/logo.png"
+                                alt="Stash Logo"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
                         </div>
-                        <span className="text-2xl font-bold font-[family-name:var(--font-syne)]">
-                            JobKit
-                        </span>
                     </Link>
                     <h1 className="text-2xl font-bold font-[family-name:var(--font-syne)] mb-2">
                         Create your account
@@ -141,7 +146,7 @@ export default function SignupPage() {
                         </button>
                     </form>
 
-                    <div className="relative my-6">
+                    {/* <div className="relative my-6">
                         <div className="absolute inset-0 flex items-center">
                             <div className="w-full border-t border-border" />
                         </div>
@@ -173,7 +178,7 @@ export default function SignupPage() {
                             />
                         </svg>
                         Continue with Google
-                    </button>
+                    </button> */}
                 </div>
 
                 <p className="text-center text-sm text-text-secondary mt-6">
