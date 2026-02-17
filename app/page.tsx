@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Briefcase,
   LinkIcon,
   FileText,
   FileUp,
@@ -107,14 +106,13 @@ export default function LandingPage() {
 
       {/* ── Nav ── */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-xl border-b border-white/10' : 'bg-transparent border-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors backdrop-blur-md border border-white/10">
-              <Briefcase className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold font-[family-name:var(--font-syne)] tracking-tight text-white">
-              Stash
-            </span>
+        <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-20' : 'h-32'}`}>
+          <div className="flex items-center gap-3">
+            <Link href="/" className="group cursor-pointer">
+              <div className={`flex items-center justify-center transition-all duration-300 hover:scale-105 ${scrolled ? 'w-16 h-16' : 'w-32 h-32'}`}>
+                <img src="/logo.png" alt="Stash Logo" className="w-full h-full object-contain" />
+              </div>
+            </Link>
           </div>
 
           {/* Desktop Nav */}
@@ -176,7 +174,7 @@ export default function LandingPage() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="relative pt-24 pb-20 sm:pt-36 sm:pb-32 overflow-hidden bg-[#020617] text-white">
+      <section className="relative pt-36 pb-20 sm:pt-48 sm:pb-32 overflow-hidden bg-[#020617] text-white">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
           <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-purple-500/20 blur-[120px] rounded-full animate-pulse" style={{ animationDuration: '8s' }} />
@@ -373,10 +371,11 @@ export default function LandingPage() {
       <footer className="border-t border-white/10 bg-[#020617] text-white">
         <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-              <Briefcase className="w-4 h-4 text-white" />
-            </div>
-            <span className="text-lg font-bold font-[family-name:var(--font-syne)]">Stash</span>
+            <Link href="/" className="group cursor-pointer">
+              <div className="w-24 h-24 flex items-center justify-center transition-transform hover:scale-105">
+                <img src="/logo.png" alt="Stash Logo" className="w-full h-full object-contain" />
+              </div>
+            </Link>
           </div>
           <div className="flex items-center gap-8 text-sm text-white/50 font-medium">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>

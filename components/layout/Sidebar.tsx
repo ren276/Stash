@@ -7,7 +7,6 @@ import {
     LinkIcon,
     FileText,
     FileUp,
-    Briefcase,
     ChevronsLeft,
     ChevronsRight,
 } from "lucide-react";
@@ -35,15 +34,12 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
                 style={{ width: collapsed ? 68 : 256 }}
             >
                 {/* Logo */}
-                <div className="flex items-center h-[60px] border-b border-border shrink-0" style={{ padding: collapsed ? '0 14px' : '0 20px' }}>
-                    <div className="w-9 h-9 rounded-xl bg-accent/20 flex items-center justify-center shrink-0">
-                        <Briefcase className="w-[18px] h-[18px] text-accent" />
-                    </div>
-                    {!collapsed && (
-                        <span className="ml-3 text-lg font-bold font-[family-name:var(--font-syne)] tracking-tight whitespace-nowrap">
-                            Stash
-                        </span>
-                    )}
+                <div className="flex items-center justify-center h-[80px] border-b border-border shrink-0" style={{ padding: collapsed ? '0 10px' : '0 20px' }}>
+                    <Link href="/" className="group cursor-pointer">
+                        <div className={`transition-all duration-300 flex items-center justify-center ${collapsed ? 'w-10 h-10' : 'w-16 h-16 hover:scale-105'}`}>
+                            <img src="/logo.png" alt="Stash Logo" className="w-full h-full object-contain" />
+                        </div>
+                    </Link>
                 </div>
 
                 {/* Nav Items */}

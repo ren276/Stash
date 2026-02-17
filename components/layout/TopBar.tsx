@@ -20,6 +20,7 @@ export default function TopBar({ onSearchOpen, onToggleSidebar }: TopBarProps) {
 
     const handleLogout = async () => {
         await signOut();
+        router.push("/");
     };
 
     return (
