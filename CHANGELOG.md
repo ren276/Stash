@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.1] - 2026-05-15
+
+### ✨ Features
+- **Google Forms Support**: Added full support for Google Forms (`docs.google.com/forms`). The Stash icon and Magic Fill button now appear in form fields, with intelligent context detection using `aria-labelledby`.
+- **Iframe Injection**: Enabled content script injection into all frames, allowing the extension to work on career portals that embed application forms in iframes.
+- **Improved Detection**: Refined field context detection to be more robust across modern web forms.
+
 ## [2.0.0] - 2026-05-11
 
 ### ✨ Features

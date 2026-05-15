@@ -49,6 +49,9 @@ function handleInputFocus(input: HTMLInputElement | HTMLTextAreaElement) {
         hostname.includes('wellfound.com') ||
         hostname.includes('indeed.com') ||
         hostname.includes('glassdoor.com') ||
+        // Form builders often used for job applications
+        (hostname.includes('docs.google.com') && url.includes('/forms/')) ||
+        hostname.includes('typeform.com') ||
         // Common ATS platforms
         hostname.includes('lever.co') ||
         hostname.includes('greenhouse.io') ||
@@ -88,14 +91,7 @@ function handleInputFocus(input: HTMLInputElement | HTMLTextAreaElement) {
 }
 
 function detectContext(input: HTMLInputElement | HTMLTextAreaElement): string | null {
-    const ariaLabel = input.getAttribute('aria-label') || '';
-    const text = [
-        input.placeholder,
-        input.name,
-        input.id,
-        input.labels?.[0]?.innerText || '',
-        ariaLabel,
-    ].join(' ').toLowerCase();
+    const text = getFieldContext(input);
 
     if (text.includes('linkedin')) return 'linkedin';
     if (text.includes('github')) return 'link';
@@ -227,12 +223,21 @@ async function runSmartFill() {
 }
 
 function getFieldContext(input: HTMLInputElement | HTMLTextAreaElement): string {
+    const labelledBy = input.getAttribute('aria-labelledby');
+    let labelledByText = '';
+    if (labelledBy) {
+        labelledByText = labelledBy.split(' ')
+            .map(id => document.getElementById(id)?.innerText || '')
+            .join(' ');
+    }
+
     return [
         input.placeholder,
         input.name,
         input.id,
         input.labels?.[0]?.innerText || '',
         input.getAttribute('aria-label') || '',
+        labelledByText
     ].join(' ').toLowerCase();
 }
 

@@ -9,7 +9,8 @@ export function initJobScraper() {
         hostname.includes('lever.co') ||
         hostname.includes('greenhouse.io') ||
         hostname.includes('ashbyhq.com') ||
-        hostname.includes('workday.com');
+        hostname.includes('workday.com') ||
+        hostname.includes('docs.google.com');
 
     if (!isJobBoard) return;
 
