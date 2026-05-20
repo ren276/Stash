@@ -117,7 +117,7 @@ function injectSmartFillButton(input: HTMLInputElement | HTMLTextAreaElement) {
     
     Object.assign(smartBtn.style, {
         position: 'absolute',
-        left: `${rect.right - 62 + scrollX}px`, // Place it to the left of the main icon
+        left: `${rect.right + 8 + scrollX}px`, // Place it on the side of the field box
         top: `${rect.top + (rect.height / 2) - 13 + scrollY}px`,
         width: '26px',
         height: '26px',
@@ -253,7 +253,7 @@ function injectStashIcon(input: HTMLInputElement | HTMLTextAreaElement, context:
     const logoUrl = chrome.runtime.getURL('logo.png');
     Object.assign(button.style, {
         position: 'absolute',
-        left: `${rect.right - 32 + scrollX}px`,
+        left: `${rect.right + 8 + scrollX}px`, // Shifted to the side of the field box
         top: `${rect.top + (rect.height / 2) - 13 + scrollY}px`,
         width: '26px',
         height: '26px',
